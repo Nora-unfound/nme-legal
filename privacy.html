@@ -18,57 +18,55 @@
   <h1>Privacy Policy</h1>
   <p class="meta">N=Me App · Last updated: May 31, 2026</p>
 
-  <p>N=Me ("we", "our", "the app") is a personal health, environment, and lifestyle tracking app. This Privacy Policy explains what data the app collects, how it is used, and your choices. N=Me is not a medical device and does not provide diagnosis, treatment, or emergency advice.</p>
+  <p>N=Me ("we", "our", "the app") is a personal health tracking app. This Privacy Policy explains what data the app collects, how it is used, and your rights.</p>
 
   <h2>1. Data We Collect</h2>
   <p>N=Me collects only the data you actively provide or authorize:</p>
   <ul>
-    <li><strong>Optional profile data</strong> — A name or display information you enter in the app. It is stored locally on your device.</li>
-    <li><strong>Health data</strong> — Steps, heart rate, sleep, HRV, respiratory rate, blood oxygen, and other HealthKit metrics you authorize. This data is read from the Apple Health app on your device.</li>
-    <li><strong>Location</strong> — Your current location, used while the app is open to request local weather and air quality values.</li>
-    <li><strong>Environment records</strong> — Weather and air quality values such as temperature, humidity, UV index, AQI, pressure, apparent temperature, wind, precipitation, cloud cover, dew point, and altitude.</li>
-    <li><strong>Habit and lifestyle records</strong> — Data you manually enter into the app, such as mood, energy, symptoms, habits, notes, medication or supplement intake, and custom items.</li>
-    <li><strong>Lab data</strong> — Investigations, plans, data checks, and reports created inside Lab.</li>
+    <li><strong>Profile name</strong> — An optional name you enter in the app. It is stored locally on your device.</li>
+    <li><strong>Health data</strong> — Steps, heart rate, sleep, HRV, and other HealthKit metrics you authorize. This data is read from the Apple Health app on your device.</li>
+    <li><strong>Location</strong> — Your current coordinates, used while the app is open to request local weather and air quality. N=Me stores environmental values, not location history.</li>
+    <li><strong>Habit and lifestyle records</strong> — Data you manually enter into the app (e.g., mood, energy, custom items you create).</li>
+    <li><strong>Lab investigations</strong> — Experiments and reports you design in the Lab feature (e.g., conditions, observations, outcomes). Stored locally and optionally synced to iCloud.</li>
   </ul>
 
   <h2>2. How We Use Your Data</h2>
   <ul>
-    <li>To power the core features of the app: tracking, trend analysis, correlation discovery, and personal experiments.</li>
-    <li>To let you export, import, and optionally sync eligible app data across your own devices.</li>
-    <li>We do <strong>not</strong> use your data for third-party advertising or tracking.</li>
-    <li>We do <strong>not</strong> sell your personal data.</li>
+    <li>To power the core features of the app: trend analysis, correlation discovery, and personal experiments.</li>
+    <li>To export or merge-import your own backup files when you choose to do so.</li>
+    <li>We do <strong>not</strong> use your data for advertising, marketing, or analytics.</li>
+    <li>We do <strong>not</strong> sell your data to any third party.</li>
   </ul>
 
   <h2>3. Data Storage</h2>
   <p>Your data is stored as follows:</p>
   <ul>
     <li><strong>Locally on your device</strong> — in a private SQLite database.</li>
-    <li><strong>In your personal iCloud account</strong> — via Apple CloudKit private database, if you enable iCloud sync.</li>
-    <li><strong>Health data</strong> — imported from Apple Health and kept on this device. Health data is not uploaded by N=Me through CloudKit sync.</li>
+    <li><strong>Health data</strong> — imported from Apple Health and kept on this device. It is not uploaded by N=Me.</li>
+    <li><strong>iCloud (optional)</strong> — If you enable iCloud sync in Settings, your custom items, manual records, lab investigations, and environment records are synced to your private iCloud database, managed by Apple. Health data is never uploaded by N=Me. You can disable sync or delete iCloud data at any time from Settings → Data Management.</li>
     <li><strong>Backup files</strong> — if you export data, the backup file is saved or shared only to the destination you choose through the iOS share sheet.</li>
   </ul>
-  <p>CloudKit sync includes custom items, manual records, environment records, and Lab investigations. Apple Health data can be re-imported from Apple Health on each device after you grant permission.</p>
-  <p>N=Me does <strong>not</strong> operate external servers that store your personal data.</p>
+  <p>N=Me does <strong>not</strong> operate its own servers. Your data stays on your device unless you enable iCloud sync.</p>
 
   <h2>4. Data Sharing</h2>
   <p>We do not sell your personal data or use it for advertising. To import environment data, N=Me sends your current coordinates to weather and air quality providers such as Open-Meteo. N=Me stores the returned environmental values, not your coordinate history.</p>
 
   <h2>5. Third-Party Services</h2>
   <ul>
-    <li><strong>Apple HealthKit</strong> — used to read health metrics after you grant permission. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
-    <li><strong>Apple CloudKit</strong> — used for optional private iCloud sync. Governed by Apple's Privacy Policy.</li>
-    <li><strong>Apple App Store In-App Purchases</strong> — used if subscriptions are enabled. We do not see or store payment details.</li>
-    <li><strong>Open-Meteo or similar providers</strong> — used to fetch weather and air quality values for your current location.</li>
+    <li><strong>Apple HealthKit</strong> — used to read health metrics. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+    <li><strong>Apple iCloud (CloudKit)</strong> — used for optional data sync when you enable it in Settings. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+    <li><strong>Apple App Store</strong> — used to process in-app subscription purchases. Governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</li>
+    <li><strong>Open-Meteo</strong> — used to fetch weather and air quality values for your current location.</li>
   </ul>
 
   <h2>6. Your Rights</h2>
   <ul>
     <li><strong>Access your data</strong> — All your data is visible within the app.</li>
-    <li><strong>Export your data</strong> — Use Data Management → Export Data to download a copy.</li>
-    <li><strong>Delete local data</strong> — Use the app's delete controls or delete the app to erase data from this device.</li>
-    <li><strong>Manage iCloud data</strong> — If iCloud sync is enabled, synced app data may also exist in your iCloud private database and can be managed through Apple iCloud storage controls or any cloud-delete control provided in the app.</li>
+    <li><strong>Export your data</strong> — Use Settings → Data Management → Export Data to download a full copy.</li>
+    <li><strong>Delete local data</strong> — Use Profile → Delete All Local Data to erase data from this device.</li>
     <li><strong>Revoke Health access</strong> — Go to iOS Settings → Privacy & Security → Health → N=Me to remove access at any time.</li>
     <li><strong>Revoke Location access</strong> — Go to iOS Settings → Privacy & Security → Location Services → N=Me.</li>
+    <li><strong>Delete iCloud data</strong> — Use Settings → Data Management → Delete iCloud Data to remove synced data from Apple's servers while keeping local data intact.</li>
   </ul>
 
   <h2>7. Children's Privacy</h2>

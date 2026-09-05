@@ -16,17 +16,17 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="meta">N=Me App · Last updated: August 30, 2026</p>
+  <p class="meta">N=Me App · Last updated: September 1, 2026</p>
 
-  <p>N=Me is a personal health tracking app provided by XIAOYING DING ("N=Me", "we", "our"). This Privacy Policy explains what information N=Me processes, where it goes, how long it is retained, and the choices available to you.</p>
+  <p>N=Me is a personal health tracking app. This Privacy Policy explains what information N=Me processes, where it goes, how long it is retained, and the choices available to you.</p>
 
   <h2>1. Data We Collect</h2>
   <p>N=Me processes only information you provide, authorize, or generate by using an optional feature:</p>
   <ul>
     <li><strong>Profile name</strong> — An optional name you enter in the app. It is stored locally on your device.</li>
     <li><strong>Apple Health data</strong> — Steps, heart rate, sleep, HRV, cycle and reproductive-health metrics, and other HealthKit types you authorize. N=Me reads this information from Apple Health and stores an imported copy locally.</li>
-    <li><strong>Oura account and health data</strong> — If you connect Oura, N=Me may receive the account email, personal profile, daily summaries, heart rate, sleep, workouts, sessions, tags, device data, and other records covered by the scopes you approve. Imported records stay on your device. Access and refresh tokens are stored in the device Keychain.</li>
-    <li><strong>Location and environment data</strong> — When you request an environment import, your current coordinates are sent to Open-Meteo to obtain local weather and air-quality values. N=Me stores the returned environmental values and location accuracy, not a coordinate history.</li>
+    <li><strong>Oura health data</strong> — If you connect Oura, N=Me requests only the daily, heart-rate, daily blood-oxygen, workout, and session scopes. It converts supported responses into the health values and event timing needed by the app; it does not request your Oura email, personal profile, tags, or device configuration, and does not retain complete API responses. Imported values stay on your device. Access and refresh tokens are stored in the device Keychain.</li>
+    <li><strong>Location and environment data</strong> — When an environment import runs while the app is open, the current location is used with Apple WeatherKit for weather. Coordinates rounded to two decimal places are sent through N=Me's Cloudflare Worker to OpenAQ for nearby air-quality measurements. N=Me stores returned environmental values and source attribution, not coordinates, location accuracy, altitude, or location history.</li>
     <li><strong>Habit and lifestyle records</strong> — Data you manually enter into the app (e.g., mood, energy, custom items you create).</li>
     <li><strong>Lab investigations and saved reports</strong> — Experiments and reports you design or save, including notes, tracked field names, date ranges, results, and statistical summaries.</li>
     <li><strong>Purchase information</strong> — When subscriptions are available, RevenueCat processes an anonymous app user identifier, App Store receipt and purchase or subscription status, basic device and operating-system information, and service timestamps to provide and restore Premium access. N=Me does not give RevenueCat your profile name or health records.</li>
@@ -46,28 +46,28 @@
   <p>Your data is stored as follows:</p>
   <ul>
     <li><strong>Locally on your device</strong> — in a private SQLite database.</li>
-    <li><strong>Raw health and provider data</strong> — Imported Apple Health readings, imported Oura records, and raw provider documents remain on this device and are excluded from N=Me CloudKit sync.</li>
+    <li><strong>Raw health data</strong> — Imported Apple Health readings and normalized Oura values remain on this device and are excluded from N=Me CloudKit sync.</li>
     <li><strong>iCloud (optional)</strong> — If you enable iCloud sync, custom items, manual records, saved reports, Lab investigations, environment records, and related app data are synced to your private CloudKit database managed by Apple. Saved reports may contain notes, health-field names, date ranges, and statistics derived on-device from health data, such as correlations, group means, or significance results. Raw Apple Health and Oura readings are not included.</li>
     <li><strong>Backup and export files</strong> — Export files include local app datasets, including imported provider records. They are written to a temporary app file, presented through the iOS share sheet, and removed from the app cache after the share flow. Any copy you save is controlled by the destination you select.</li>
   </ul>
-  <p>N=Me operates a minimal OAuth broker hosted by Cloudflare for Oura sign-in. The broker processes authorization codes and tokens in memory only to exchange, refresh, or revoke Oura access. It does not maintain a user database or persist tokens or health data. Cloudflare may process ordinary request metadata, such as an IP address, under its own privacy policy.</p>
+  <p>N=Me operates two minimal services hosted by Cloudflare: an Oura OAuth broker and an OpenAQ proxy. The OAuth broker processes authorization codes and tokens in memory only to exchange, refresh, or revoke Oura access. The OpenAQ proxy receives rounded coordinates, keeps the OpenAQ API key out of the app, and returns supported nearby measurements and attribution. Neither service maintains a user database or persists tokens or health data. Cloudflare may process ordinary request metadata, such as an IP address, under its own privacy policy.</p>
 
   <h2>4. Data Sharing</h2>
-  <p>We do not sell personal data, use health or location information for advertising, or run advertising or general product-analytics SDKs. Information is disclosed only when you use the related service: coordinates to Open-Meteo, Oura authorization credentials through the Cloudflare-hosted broker, authorized API requests to Oura, eligible app data to your private CloudKit database, purchase information to Apple and RevenueCat, or an export to the destination you choose. Where N=Me controls a processor, it limits processing to the service purpose and requires appropriate protection. Independent services also process information under the policies linked below.</p>
+  <p>We do not sell personal data, use health or location information for advertising, or run advertising or general product-analytics SDKs. Information is disclosed only when you use the related service: current location to Apple WeatherKit; rounded coordinates to the Cloudflare-hosted OpenAQ proxy and OpenAQ; Oura authorization credentials through the Cloudflare-hosted OAuth broker; authorized API requests to Oura; eligible app data to your private CloudKit database; purchase information to Apple and RevenueCat; or an export to the destination you choose. Where N=Me controls a processor, it limits processing to the service purpose and requires appropriate protection. Independent services also process information under the policies linked below.</p>
 
   <h2>5. Third-Party Services</h2>
   <ul>
-    <li><strong>Apple HealthKit, iCloud, and App Store</strong> — used for authorized health imports, optional private CloudKit sync, and subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.</li>
+    <li><strong>Apple HealthKit, WeatherKit, iCloud, and App Store</strong> — used for authorized health imports, local weather, optional private CloudKit sync, and subscription purchases. Weather attribution is shown in the environment screen. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.</li>
     <li><strong>Oura</strong> — used only after you connect an Oura account to authorize and import the selected Oura data. See <a href="https://ouraring.com/privacy-policy" target="_blank" rel="noopener noreferrer">Oura's Privacy Policy</a>.</li>
-    <li><strong>Cloudflare</strong> — hosts the stateless Oura OAuth broker. See <a href="https://www.cloudflare.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</li>
-    <li><strong>Open-Meteo</strong> — receives current coordinates to return weather and air-quality values. Its server logs may contain IP addresses and coordinates and may be retained for up to 90 days for operations and troubleshooting. See <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo Terms &amp; Privacy</a>.</li>
+    <li><strong>Cloudflare</strong> — hosts the stateless Oura OAuth broker and OpenAQ proxy. See <a href="https://www.cloudflare.com/policies/privacy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</li>
+    <li><strong>OpenAQ</strong> — receives rounded coordinates from the proxy to return nearby public air-quality measurements. N=Me filters for sources marked as permitting commercial use and displays source attribution when available. See <a href="https://openaq.org/about/initiatives/open-data/" target="_blank" rel="noopener noreferrer">OpenAQ's Open Data information</a>.</li>
     <li><strong>RevenueCat</strong> — manages optional subscriptions and validates App Store receipts using an anonymous app user identifier. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat's Privacy Policy</a>.</li>
   </ul>
 
   <h2>6. Retention and Deletion</h2>
   <ul>
     <li><strong>Local app data</strong> — Retained until you delete individual records, clear imported health data, or use Settings → Data Management → Delete Local Data. Local deletion also removes locally stored Oura credentials, but does not delete iCloud data, Oura's source records, Apple purchase history, or records RevenueCat must retain for subscription administration or legal obligations.</li>
-    <li><strong>Oura access</strong> — Tokens remain in the device Keychain until they expire, you disconnect Oura, or you delete local data. Disconnecting stops future access but keeps already imported records until you clear the Health cache or delete local data.</li>
+    <li><strong>Oura access</strong> — Tokens remain in the device Keychain until they expire, you disconnect Oura, or you delete local data. Disconnecting waits for an active sync to finish, revokes access where the provider is reachable, removes credentials, and deletes Oura data imported into N=Me. It does not delete source records in Oura Cloud.</li>
     <li><strong>iCloud data</strong> — Retained in your private CloudKit database until you use Delete iCloud Data or Apple deletes it under your iCloud account settings and policies. Turning off automatic sync alone does not delete existing iCloud data.</li>
     <li><strong>OAuth broker</strong> — Does not persist authorization codes or tokens. Signed authorization state expires after approximately ten minutes.</li>
     <li><strong>RevenueCat and other providers</strong> — Retention is governed by the linked provider policies and applicable purchase-record obligations. You may contact us about a provider-data request associated with N=Me.</li>
@@ -79,7 +79,7 @@
     <li><strong>Correct or delete local data</strong> — Edit or delete individual records, or use Settings → Data Management → Delete Local Data.</li>
     <li><strong>Revoke Health access</strong> — In the Health app, open your profile → Privacy → Apps → N=Me. Clearing N=Me's local Health cache does not delete the source data in Apple Health.</li>
     <li><strong>Revoke Location access</strong> — Go to iOS Settings → Privacy & Security → Location Services → N=Me.</li>
-    <li><strong>Disconnect Oura</strong> — Use Settings → Permissions → Oura Ring. Clear imported records separately from Settings → Data Management if desired.</li>
+    <li><strong>Disconnect Oura</strong> — Use Settings → Permissions → Oura Ring to revoke access and delete Oura data imported into N=Me.</li>
     <li><strong>Delete iCloud data</strong> — Use Settings → Data Management → Delete iCloud Data while keeping local and raw health data intact.</li>
     <li><strong>Manage subscriptions</strong> — Manage or cancel through your Apple ID subscription settings. Contact us for questions about RevenueCat processing associated with N=Me.</li>
   </ul>
@@ -95,6 +95,6 @@
   <p>We may update this Privacy Policy as the app or legal requirements change. The date above identifies the current version. We will provide additional notice or request consent before a material new use when required by law.</p>
 
   <h2>11. Contact</h2>
-  <p>Data controller and app provider: XIAOYING DING. For privacy questions or requests, email <a href="mailto:meme.265833@gmail.com">meme.265833@gmail.com</a>.</p>
+  <p>For privacy questions or requests, email <a href="mailto:meme.265833@gmail.com">meme.265833@gmail.com</a>. App provider and data controller: XIAOYING DING.</p>
 </body>
 </html>
